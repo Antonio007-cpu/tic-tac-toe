@@ -22,6 +22,22 @@ document.addEventListener('DOMContentLoaded',()=>{
         [2,4,6]
     ]
 
+
+    const Announce=(type)=>{
+        switch(type){
+            case PlayerX_Won:
+                announce.innerHTML="Player<span class="playerX"></span> Won"
+                break
+        }
+    }
+
+    const changePlayer=()=>{
+        playerDisplay.classList.remove('player${currentPlayer')
+        currentPlayer=currentPlayer==='X'?'O':'X'
+        playerDisplay.innerText=currentPlayer
+        playerDisplay.classList.add('player${currentPlayer}')
+    }
+
     const playerAction=(tile,index)=>{
         if(isValidation(tile)&& gameActive){
             tile.innerText = currentPlayer
